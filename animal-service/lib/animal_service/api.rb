@@ -17,7 +17,12 @@ module AnimalService
     end
 
     get '/alligator' do
-
+      if (alligator = AnimalRepository.find_alligator_by_name('Mary'))  
+        content_type :json
+        alligator.to_json
+      else
+        status 404
+      end
     end
 
     get '/alligators/:name' do
