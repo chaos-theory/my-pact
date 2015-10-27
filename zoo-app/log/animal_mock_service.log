@@ -1,6 +1,133 @@
-I, [2015-10-26T21:05:27.634017 #29114]  INFO -- : Cleared interactions before example "ZooApp::AnimalServiceClient get_alligator returns an alligator"
-I, [2015-10-26T21:05:27.637904 #29114]  INFO -- : Registered expected interaction GET /alligator
-D, [2015-10-26T21:05:27.637992 #29114] DEBUG -- : {
+I, [2015-10-26T21:54:59.798147 #29681]  INFO -- : Cleared interactions before example "ZooApp::AnimalServiceClient.find_alligator_by_name when an alligator by the given name exists returns the alligator"
+I, [2015-10-26T21:54:59.802047 #29681]  INFO -- : Registered expected interaction GET /alligators/Mary
+D, [2015-10-26T21:54:59.802124 #29681] DEBUG -- : {
+  "description": "a request for an alligator",
+  "provider_state": "there is an alligator named Mary",
+  "request": {
+    "method": "get",
+    "path": "/alligators/Mary",
+    "headers": {
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "name": "Mary"
+    }
+  }
+}
+I, [2015-10-26T21:54:59.806006 #29681]  INFO -- : Received request GET /alligators/Mary
+D, [2015-10-26T21:54:59.806067 #29681] DEBUG -- : {
+  "path": "/alligators/Mary",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Accept": "application/json",
+    "Connection": "close",
+    "Host": "localhost:1234",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2015-10-26T21:54:59.806185 #29681]  INFO -- : Found matching response for GET /alligators/Mary
+D, [2015-10-26T21:54:59.806235 #29681] DEBUG -- : {
+  "status": 200,
+  "headers": {
+    "Content-Type": "application/json;charset=utf-8"
+  },
+  "body": {
+    "name": "Mary"
+  }
+}
+I, [2015-10-26T21:54:59.810200 #29681]  INFO -- : Verifying - interactions matched for example "ZooApp::AnimalServiceClient.find_alligator_by_name when an alligator by the given name exists returns the alligator"
+I, [2015-10-26T21:54:59.813982 #29681]  INFO -- : Cleared interactions before example "ZooApp::AnimalServiceClient.find_alligator_by_name when an alligator by the given name does not exist returns nil"
+I, [2015-10-26T21:54:59.817531 #29681]  INFO -- : Registered expected interaction GET /alligators/Mary
+D, [2015-10-26T21:54:59.817597 #29681] DEBUG -- : {
+  "description": "a request for an alligator",
+  "provider_state": "there is not an alligator named Mary",
+  "request": {
+    "method": "get",
+    "path": "/alligators/Mary",
+    "headers": {
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 404,
+    "headers": {
+    }
+  }
+}
+I, [2015-10-26T21:54:59.821404 #29681]  INFO -- : Received request GET /alligators/Mary
+D, [2015-10-26T21:54:59.821465 #29681] DEBUG -- : {
+  "path": "/alligators/Mary",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Accept": "application/json",
+    "Connection": "close",
+    "Host": "localhost:1234",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2015-10-26T21:54:59.821568 #29681]  INFO -- : Found matching response for GET /alligators/Mary
+D, [2015-10-26T21:54:59.821635 #29681] DEBUG -- : {
+  "status": 404,
+  "headers": {
+  }
+}
+I, [2015-10-26T21:54:59.826248 #29681]  INFO -- : Verifying - interactions matched for example "ZooApp::AnimalServiceClient.find_alligator_by_name when an alligator by the given name does not exist returns nil"
+I, [2015-10-26T21:54:59.830962 #29681]  INFO -- : Cleared interactions before example "ZooApp::AnimalServiceClient.find_alligator_by_name when an error occurs retrieving the alligator raises an error"
+I, [2015-10-26T21:54:59.835312 #29681]  INFO -- : Registered expected interaction GET /alligators/Mary
+D, [2015-10-26T21:54:59.835420 #29681] DEBUG -- : {
+  "description": "a request for an alligator",
+  "provider_state": "an error occurs retrieving an alligator",
+  "request": {
+    "method": "get",
+    "path": "/alligators/Mary",
+    "headers": {
+      "Accept": "application/json"
+    }
+  },
+  "response": {
+    "status": 500,
+    "headers": {
+      "Content-Type": "application/json;charset=utf-8"
+    },
+    "body": {
+      "error": "Argh!!!"
+    }
+  }
+}
+I, [2015-10-26T21:54:59.841035 #29681]  INFO -- : Received request GET /alligators/Mary
+D, [2015-10-26T21:54:59.841100 #29681] DEBUG -- : {
+  "path": "/alligators/Mary",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Accept": "application/json",
+    "Connection": "close",
+    "Host": "localhost:1234",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2015-10-26T21:54:59.841394 #29681]  INFO -- : Found matching response for GET /alligators/Mary
+D, [2015-10-26T21:54:59.841465 #29681] DEBUG -- : {
+  "status": 500,
+  "headers": {
+    "Content-Type": "application/json;charset=utf-8"
+  },
+  "body": {
+    "error": "Argh!!!"
+  }
+}
+I, [2015-10-26T21:54:59.845277 #29681]  INFO -- : Verifying - interactions matched for example "ZooApp::AnimalServiceClient.find_alligator_by_name when an error occurs retrieving the alligator raises an error"
+I, [2015-10-26T21:54:59.849657 #29681]  INFO -- : Cleared interactions before example "ZooApp::AnimalServiceClient get_alligator returns an alligator"
+I, [2015-10-26T21:54:59.853416 #29681]  INFO -- : Registered expected interaction GET /alligator
+D, [2015-10-26T21:54:59.853677 #29681] DEBUG -- : {
   "description": "a request for an alligator",
   "provider_state": "an alligator exists",
   "request": {
@@ -18,22 +145,19 @@ D, [2015-10-26T21:05:27.637992 #29114] DEBUG -- : {
     }
   }
 }
-I, [2015-10-26T21:05:27.642006 #29114]  INFO -- : Received request GET /alligator
-D, [2015-10-26T21:05:27.642075 #29114] DEBUG -- : {
+I, [2015-10-26T21:54:59.857696 #29681]  INFO -- : Received request GET /alligator
+D, [2015-10-26T21:54:59.857758 #29681] DEBUG -- : {
   "path": "/alligator",
   "query": "",
   "method": "get",
   "headers": {
-    "Accept-Encoding": "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
-    "Accept": "*/*",
-    "User-Agent": "Ruby",
     "Connection": "close",
     "Host": "localhost:1234",
     "Version": "HTTP/1.1"
   }
 }
-I, [2015-10-26T21:05:27.642192 #29114]  INFO -- : Found matching response for GET /alligator
-D, [2015-10-26T21:05:27.642247 #29114] DEBUG -- : {
+I, [2015-10-26T21:54:59.858059 #29681]  INFO -- : Found matching response for GET /alligator
+D, [2015-10-26T21:54:59.858111 #29681] DEBUG -- : {
   "status": 200,
   "headers": {
     "Content-Type": "application/json"
@@ -42,6 +166,6 @@ D, [2015-10-26T21:05:27.642247 #29114] DEBUG -- : {
     "name": "Mary"
   }
 }
-I, [2015-10-26T21:05:27.646277 #29114]  INFO -- : Verifying - interactions matched for example "ZooApp::AnimalServiceClient get_alligator returns an alligator"
-I, [2015-10-26T21:05:27.649684 #29114]  INFO -- : Writing pact with details {:consumer=>{:name=>"Zoo App"}, :provider=>{:name=>"Animal Service"}, :pactfile_write_mode=>"overwrite", :pact_dir=>"/Users/julien/Projects/my-pact/zoo-app/spec/pacts"}
-I, [2015-10-26T21:05:27.649748 #29114]  INFO -- : Writing pact for Animal Service to /Users/julien/Projects/my-pact/zoo-app/spec/pacts/zoo_app-animal_service.json
+I, [2015-10-26T21:54:59.861848 #29681]  INFO -- : Verifying - interactions matched for example "ZooApp::AnimalServiceClient get_alligator returns an alligator"
+I, [2015-10-26T21:54:59.865630 #29681]  INFO -- : Writing pact with details {:consumer=>{:name=>"Zoo App"}, :provider=>{:name=>"Animal Service"}, :pactfile_write_mode=>"overwrite", :pact_dir=>"/Users/julien/Projects/my-pact/zoo-app/spec/pacts"}
+I, [2015-10-26T21:54:59.865692 #29681]  INFO -- : Writing pact for Animal Service to /Users/julien/Projects/my-pact/zoo-app/spec/pacts/zoo_app-animal_service.json

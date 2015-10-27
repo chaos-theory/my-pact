@@ -9,7 +9,7 @@ module ZooApp
 			end
 
 			def == other
-				other.is_a?(Alligator) && other.name == name
+				other.is_a?(Alligator) && other.name == self.name
 			end
 		end
 	end
