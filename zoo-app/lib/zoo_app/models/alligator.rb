@@ -1,11 +1,16 @@
-class Alligator
-	attr_reader :name
+module ZooApp
+	module Animals
+		class Alligator
 
-	def initialize name
-		@name = name
-	end
+			attr_reader :name
 
-	def == other
-		other.is_a?(Alligator) && other.name == name
+			def initialize attributes
+				@name = attributes[:name]
+			end
+
+			def == other
+				other.is_a?(Alligator) && other.name == name
+			end
+		end
 	end
 end

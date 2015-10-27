@@ -1,12 +1,14 @@
 require 'httparty'
 require 'zoo_app/models/alligator'
 
-class AnimalServiceClient
-	include HTTParty
-	base_uri 'http://animal-service.com'
+module ZooApp
+	class AnimalServiceClient
+		include HTTParty
+		base_uri 'http://animal-service.com'
 
-	def get_alligator
-		name = JSON.parse(self.class.get("/alligator").body)['name']
-		Alligator.new(name)
+		def get_alligator
+			name = JSON.parse(self.class.get("/alligator").body)['name']
+			ZooApp::Animals::Alligator.new(name: name)
+		end
 	end
 end
