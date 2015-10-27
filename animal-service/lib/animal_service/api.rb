@@ -16,6 +16,10 @@ module AnimalService
       {error: e.message, backtrace: e.backtrace}.to_json
     end
 
+    get '/alligator' do
+
+    end
+
     get '/alligators/:name' do
       # if (alligator = AnimalRepository.find_alligator_by_name(params[:name]))
       #   content_type :json

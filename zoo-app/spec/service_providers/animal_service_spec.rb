@@ -21,11 +21,11 @@ describe AnimalServiceClient, :pact => true do
 			will_respond_with(
 				status: 200,
 				headers: {'Content-Type' => 'application/json'},
-				body: {name: 'Betty'} )
+				body: {name: 'Mary'} )
 		end
 
 		it "returns an alligator" do
-			expect(subject.get_alligator).to eq(Alligator.new('Betty'))
+			expect(subject.get_alligator).to eq(Alligator.new('Mary'))
 		end
 
 	end

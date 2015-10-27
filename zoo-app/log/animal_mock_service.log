@@ -1,6 +1,6 @@
-I, [2015-10-26T19:42:36.396478 #26129]  INFO -- : Cleared interactions before example "AnimalServiceClient get_alligator returns an alligator"
-I, [2015-10-26T19:42:36.400365 #26129]  INFO -- : Registered expected interaction GET /alligator
-D, [2015-10-26T19:42:36.400445 #26129] DEBUG -- : {
+I, [2015-10-26T20:30:34.034757 #27957]  INFO -- : Cleared interactions before example "AnimalServiceClient get_alligator returns an alligator"
+I, [2015-10-26T20:30:34.038768 #27957]  INFO -- : Registered expected interaction GET /alligator
+D, [2015-10-26T20:30:34.038845 #27957] DEBUG -- : {
   "description": "a request for an alligator",
   "provider_state": "an alligator exists",
   "request": {
@@ -14,18 +14,34 @@ D, [2015-10-26T19:42:36.400445 #26129] DEBUG -- : {
       "Content-Type": "application/json"
     },
     "body": {
-      "name": "Betty"
+      "name": "Mary"
     }
   }
 }
-W, [2015-10-26T19:42:36.404022 #26129]  WARN -- : Verifying - actual interactions do not match expected interactions for example "AnimalServiceClient get_alligator returns an alligator". 
-Missing requests:
-	GET /alligator
-
-
-W, [2015-10-26T19:42:36.404050 #26129]  WARN -- : Missing requests:
-	GET /alligator
-
-
-I, [2015-10-26T19:42:36.407898 #26129]  INFO -- : Writing pact with details {:consumer=>{:name=>"Zoo App"}, :provider=>{:name=>"Animal Service"}, :pactfile_write_mode=>"overwrite", :pact_dir=>"/Users/julien/Projects/my-pact/zoo-app/spec/pacts"}
-I, [2015-10-26T19:42:36.407965 #26129]  INFO -- : Writing pact for Animal Service to /Users/julien/Projects/my-pact/zoo-app/spec/pacts/zoo_app-animal_service.json
+I, [2015-10-26T20:30:34.042911 #27957]  INFO -- : Received request GET /alligator
+D, [2015-10-26T20:30:34.042978 #27957] DEBUG -- : {
+  "path": "/alligator",
+  "query": "",
+  "method": "get",
+  "headers": {
+    "Accept-Encoding": "gzip;q=1.0,deflate;q=0.6,identity;q=0.3",
+    "Accept": "*/*",
+    "User-Agent": "Ruby",
+    "Connection": "close",
+    "Host": "localhost:1234",
+    "Version": "HTTP/1.1"
+  }
+}
+I, [2015-10-26T20:30:34.043091 #27957]  INFO -- : Found matching response for GET /alligator
+D, [2015-10-26T20:30:34.043144 #27957] DEBUG -- : {
+  "status": 200,
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "name": "Mary"
+  }
+}
+I, [2015-10-26T20:30:34.047213 #27957]  INFO -- : Verifying - interactions matched for example "AnimalServiceClient get_alligator returns an alligator"
+I, [2015-10-26T20:30:34.051032 #27957]  INFO -- : Writing pact with details {:consumer=>{:name=>"Zoo App"}, :provider=>{:name=>"Animal Service"}, :pactfile_write_mode=>"overwrite", :pact_dir=>"/Users/julien/Projects/my-pact/zoo-app/spec/pacts"}
+I, [2015-10-26T20:30:34.051096 #27957]  INFO -- : Writing pact for Animal Service to /Users/julien/Projects/my-pact/zoo-app/spec/pacts/zoo_app-animal_service.json
