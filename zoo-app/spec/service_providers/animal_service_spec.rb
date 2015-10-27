@@ -8,10 +8,10 @@ module ZooApp
 
 		before do
 			# Configure your client to point to the stub service on localhost using the port you have specified
-			AnimalServiceClient.base_uri 'localhost:1234'
+			AnimalServiceClient.base_uri animal_service.mock_service_base_url
 		end
 
-		subject { AnimalServiceClient.new }
+		# subject { AnimalServiceClient.new }
 
 		describe "get_alligator" do
 
